@@ -2,7 +2,7 @@ import { addDays, parseISO } from "date-fns";
 
 const SYMBOL = "BTCUSDT";
 const INTERVAL = "1h";
-const LIMIT = 29;
+const LIMIT = 30;
 const START_DATE = "2026-09-18";
 
 const startDate = parseISO(START_DATE);

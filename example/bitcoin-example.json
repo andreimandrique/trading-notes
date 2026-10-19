@@ -317,5 +317,16 @@
     "openTime": 1789761600000,
     "closeTime": 1789765199999,
     "isFinal": true
+  },
+  {
+    "symbol": "BTCUSDT",
+    "open": "81110.01000000",
+    "high": "81300.00000000",
+    "low": "81092.00000000",
+    "close": "81238.20000000",
+    "volume": "488.11936000",
+    "openTime": 1789765200000,
+    "closeTime": 1789768799999,
+    "isFinal": false
   }
 ]

@@ -7,7 +7,7 @@ const DEFAULTS = {
   startDate: "2026-09-18",
 };
 
-async function getExampleCandle({
+async function candleExample({
   symbol = DEFAULTS.symbol,
   interval = DEFAULTS.interval,
   limit = DEFAULTS.limit,
@@ -50,4 +50,4 @@ async function getExampleCandle({
   }));
 }
 
-export default getExampleCandle;
+export default candleExample;

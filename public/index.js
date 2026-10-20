@@ -29,10 +29,10 @@ const priceChart = new Chart(myChart, {
   },
   options: {
     scales: {
-      x: {
-        type: 'time',
-        time: { unit: 'day' }
-      },
+      // x: {
+      //   type: 'time',
+      //   time: { unit: 'day' }
+      // },
 
     }
   }
@@ -56,10 +56,10 @@ const rsiChart = new Chart(myChartRsi, {
         type: 'time',
         time: { unit: 'day' }
       },
-      y: {
-        min: 0,
-        max: 100,
-      },
+      // y: {
+      //   min: 0,
+      //   max: 100,
+      // },
     },
   },
 });

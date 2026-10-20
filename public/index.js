@@ -29,10 +29,10 @@ const priceChart = new Chart(myChart, {
   },
   options: {
     scales: {
-      // x: {
-      //   type: 'time',
-      //   time: { unit: 'day' }
-      // },
+      x: {
+        type: 'time',
+        time: { unit: 'day' }
+      },
 
     }
   }
@@ -41,27 +41,56 @@ const priceChart = new Chart(myChart, {
 const myChartRsi = document.getElementById("myChartRsi");
 
 const rsiChart = new Chart(myChartRsi, {
-  type: "line",
   data: {
     datasets: [
       {
+        type: "candlestick",
+        label: "Bitcoin Price",
+        data: formattedData,
+        xAxisID: 'x',
+        yAxisID: 'y', // Top panel price axis
+      },
+      {
+        type: "line",
         label: "RSI",
         data: rsiData,
-      },
+        xAxisID: 'x',
+        yAxisID: 'y1', // Bottom panel RSI axis
+        borderColor: "rgba(153, 102, 255, 1)",
+        borderWidth: 1.5,
+        pointRadius: 0,
+      }
     ],
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: {
+      mode: "index",
+      intersect: false,
+    },
     scales: {
       x: {
         type: 'time',
         time: { unit: 'day' }
       },
-      // y: {
-      //   min: 0,
-      //   max: 100,
-      // },
+      // Top Panel: Candlestick Price (Higher weight = takes up more height)
+      y: {
+        type: 'linear',
+        position: 'left',
+        weight: 3,
+      },
+      // Bottom Panel: RSI Line (Lower weight = smaller sub-panel at the bottom)
+      y1: {
+        type: 'linear',
+        position: 'left',
+        weight: 1,
+        min: 0,
+        max: 100,
+        grid: {
+          drawOnChartArea: true,
+        },
+      },
     },
   },
 });
-
-

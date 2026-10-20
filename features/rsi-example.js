@@ -1,21 +1,21 @@
 import { RSI } from "trading-signals";
-import candles from '../example/bitcoin-example.json' with { type: 'json' };
+import candles from "../example/bitcoin-example.json" with { type: "json" };
 
-async function rsiExample() {
+const RSI_PERIOD = 14;
 
-  const closes = candles.map((c) => Number(c.close));
-  const rsi = new RSI(14);
-  const rsiValues = rsi.updates(closes);
-  
-  const candlesWithRsi = candles.map((candle, index) => {
-    if(index < 14){
-      return {...candle, rsi: null};
-    }
-    return {...candle, rsi: rsiValues[index]};
-  });
+function enrichCandlesWithRsi(rawCandles) {
+  const closes = rawCandles.map((c) => Number(c.close));
+  const rsiCalculator = new RSI(RSI_PERIOD);
+  const rsiValues = rsiCalculator.updates(closes);
 
-
-  console.log(JSON.stringify(candlesWithRsi, null, 2));
+  return rawCandles
+    .map((candle, index) => ({
+      ...candle,
+      rsi: rsiValues[index] ?? null,
+    }))
+    .filter((candle) => candle.rsi !== null);
 }
 
-rsiExample();
+// Execute and log
+const candlesWithRsi = enrichCandlesWithRsi(candles);
+console.log(JSON.stringify(candlesWithRsi, null, 2));

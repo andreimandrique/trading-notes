@@ -3,7 +3,7 @@ import { addDays, parseISO } from "date-fns";
 const DEFAULTS = {
   symbol: "BTCUSDT",
   interval: "1h",
-  limit: 29,
+  limit: 30,
   startDate: "2026-09-18",
 };
 

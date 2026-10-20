@@ -327,6 +327,6 @@
     "volume": "488.11936000",
     "openTime": 1789765200000,
     "closeTime": 1789768799999,
-    "isFinal": false
+    "isFinal": true
   }
 ]

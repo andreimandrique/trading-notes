@@ -1,24 +1,26 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+    <div>
+      <canvas id="myChartRsi"></canvas>
+    </div>
 
-<div>
-    <canvas id="myChart"></canvas>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.1/dist/chartjs-chart-financial.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxon@3"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.1/dist/chartjs-chart-financial.min.js"></script>
-
-<script>
-    const candles = <%- JSON.stringify(candles) %>;
-</script>
-<script src="index.js"></script>
-</body>
+    <script>
+      const candles = <%- JSON.stringify(candles) %>;
+    </script>
+    <script src="index.js"></script>
+  </body>
 </html>

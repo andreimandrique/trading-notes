@@ -8,16 +8,14 @@ const formattedData = candles.map((item) => ({
   c: parseFloat(item.close),
 }));
 
-
 const rsiData = candles.map((item) => ({
   x: item.openTime,
   y: item.rsi,
 }));
 
-
 const myChart = document.getElementById("myChart");
 
-const priceChart = new Chart(myChart, {
+new Chart(myChart, {
   type: "candlestick",
   data: {
     datasets: [
@@ -30,66 +28,38 @@ const priceChart = new Chart(myChart, {
   options: {
     scales: {
       x: {
-        type: 'time',
-        time: { unit: 'day' }
+        type: "time",
+        time: { unit: "hour" },
       },
-
-    }
-  }
+    },
+  },
 });
 
 const myChartRsi = document.getElementById("myChartRsi");
 
-const rsiChart = new Chart(myChartRsi, {
+new Chart(myChartRsi, {
+  type: "line",
   data: {
     datasets: [
       {
-        type: "candlestick",
-        label: "Bitcoin Price",
-        data: formattedData,
-        xAxisID: 'x',
-        yAxisID: 'y', // Top panel price axis
-      },
-      {
-        type: "line",
         label: "RSI",
         data: rsiData,
-        xAxisID: 'x',
-        yAxisID: 'y1', // Bottom panel RSI axis
-        borderColor: "rgba(153, 102, 255, 1)",
+        borderColor: "rgb(75, 192, 192)",
         borderWidth: 1.5,
-        pointRadius: 0,
-      }
+        pointRadius: 1,
+        hoverPointRadius: 5,
+      },
     ],
   },
   options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    interaction: {
-      mode: "index",
-      intersect: false,
-    },
     scales: {
       x: {
-        type: 'time',
-        time: { unit: 'day' }
+        type: "time",
+        time: { unit: "hour" },
       },
-      // Top Panel: Candlestick Price (Higher weight = takes up more height)
       y: {
-        type: 'linear',
-        position: 'left',
-        weight: 3,
-      },
-      // Bottom Panel: RSI Line (Lower weight = smaller sub-panel at the bottom)
-      y1: {
-        type: 'linear',
-        position: 'left',
-        weight: 1,
         min: 0,
         max: 100,
-        grid: {
-          drawOnChartArea: true,
-        },
       },
     },
   },

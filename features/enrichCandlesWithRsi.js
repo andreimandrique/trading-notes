@@ -1,5 +1,5 @@
 import { RSI } from "trading-signals";
-import candles from "../example/bitcoin-example.json" with { type: "json" };
+import candles from "../example/bitcoin-rsi.json" with { type: "json" };
 
 const RSI_PERIOD = 14;
 
@@ -17,5 +17,7 @@ function enrichCandlesWithRsi(rawCandles) {
 }
 
 // Execute and log
-const candlesWithRsi = enrichCandlesWithRsi(candles);
-console.log(JSON.stringify(candlesWithRsi, null, 2));
+// const candlesWithRsi = enrichCandlesWithRsi(candles);
+// console.log(JSON.stringify(candlesWithRsi, null, 2));
+
+export default enrichCandlesWithRsi;

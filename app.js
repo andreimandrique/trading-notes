@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Load bitcoin candle data from the example JSON file
 const bitcoinData = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'example', 'bitcoin-example-rsi.json'), 'utf-8')
+  fs.readFileSync(path.join(__dirname, 'example', 'bitcoin-rsi-bullish-divergence.json'), 'utf-8')
 );
 
 app.get('/', (req, res) => {

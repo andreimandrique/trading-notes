@@ -1,5 +1,5 @@
 import { RSI } from "trading-signals";
-import candles from "../example/bitcoin-rsi.json" with { type: "json" };
+import candles from "../sample-data/bitcoin-rsi.json" with { type: "json" };
 
 const RSI_PERIOD = 14;
 

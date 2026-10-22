@@ -1,4 +1,4 @@
-import candles from "../example/bitcoin-rsi-bullish-divergence.json" with {type: "json"};
+import candles from "../sample-data/bitcoin-bullish-divergence.json" with {type: "json"};
 
 
 import enrichCandlesWithRsi from "./enrichCandlesWithRsi.js";

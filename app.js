@@ -16,9 +16,9 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve static files from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Load bitcoin candle data from the example JSON file
+// Load bitcoin candle data from the sample-data JSON file
 const bitcoinData = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'example', 'bitcoin-rsi-bullish-divergence.json'), 'utf-8')
+  fs.readFileSync(path.join(__dirname, 'sample-data', 'bitcoin-bullish-divergence.json'), 'utf-8')
 );
 
 app.get('/', (req, res) => {

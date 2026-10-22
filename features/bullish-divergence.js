@@ -26,9 +26,9 @@ function findBullishDivergence(candles) {
   const rsi2 = parseFloat(pivot2Candle.rsi);
 
   // 3. Check Bullish Divergence Rules:
-  // - Price made a lower low (Price 2 < Price 1)
+  // - Price made a lower low (Price 2 <= Price 1)
   // - RSI made a higher low (RSI 2 > RSI 1)
-  const isPriceLowerLow = priceLow2 < priceLow1;
+  const isPriceLowerLow = priceLow2 <= priceLow1;
   const isRsiHigherLow = rsi2 > rsi1;
 
   return isPriceLowerLow && isRsiHigherLow; // Returns true or false
